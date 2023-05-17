@@ -5,7 +5,7 @@ import helmet from "helmet";
 import cors from "cors";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-import * as dotenv from 'dotenv' 
+import * as dotenv from "dotenv";
 dotenv.config();
 
 import api from "./api";

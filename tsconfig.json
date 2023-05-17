@@ -2,10 +2,10 @@
   "compilerOptions": {
     "lib": ["es2021", "dom"],
     "outDir": "build",
-    "module": "ES2022",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "strict": true,
-    "target": "es2021",
+    "target": "ES2022",
     "sourceMap": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
