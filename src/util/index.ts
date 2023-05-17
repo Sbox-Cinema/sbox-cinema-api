@@ -5,3 +5,5 @@ export function isProduction(): boolean {
   const isProd = environment === "prod";
   return isProd;
 }
+
+export type Maybe<T> = T | undefined;

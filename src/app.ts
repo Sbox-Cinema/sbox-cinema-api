@@ -10,7 +10,6 @@ dotenv.config();
 
 import api from "./api";
 import { errorHandler } from "./middlewares";
-import path from "path";
 
 const App = express();
 
@@ -40,11 +39,7 @@ App.use(cors());
 App.use(express.json());
 
 App.use("/api", api);
-App.get("/:page", (req, res) => {
-  console.log(req.path);
-
-  res.sendFile(path.join(__dirname, "../pages", req.params.page));
-});
+App.use(express.static("public"));
 
 App.use(errorHandler);
 
