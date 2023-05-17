@@ -4,7 +4,7 @@
   "description": "S&Box Cinema API",
   "scripts": {
     "start": "node ./build/index.js",
-    "dev": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/index.ts",
+    "dev": "nodemon --watch './**/*.ts' src/index.ts",
     "lint": "eslint --fix src",
     "build": "tsc",
     "style": "prettier --write ."
@@ -20,7 +20,8 @@
     "express-rate-limit": "5.2.6",
     "helmet": "7.0.0",
     "moment": "2.29.4",
-    "morgan": "1.10.0"
+    "morgan": "1.10.0",
+    "puppeteer": "20.2.1"
   },
   "devDependencies": {
     "@types/cors": "2.8.12",

@@ -31,6 +31,7 @@
           start: urlParams.get("st"),
           events: {
             onReady: onPlayerReady,
+            onError: onError
           },
           playerVars: {
             autoplay: 1,
@@ -43,6 +44,11 @@
             enablejsapi: 1,
           },
         });
+      }
+      function onError(event) {
+        if (event.data == 150) {
+          console.log("SC01G1093AZ");
+        }
       }
       function onPlayerReady(event) {
         event.target.setVolume(urlParams.get("vol"));

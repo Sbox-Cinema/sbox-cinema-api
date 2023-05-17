@@ -2,6 +2,7 @@ import express from "express";
 import moment from "moment";
 import * as env from "env-var";
 import axios from "axios";
+import puppeteer from "puppeteer";
 
 const router = express.Router();
 
@@ -61,6 +62,26 @@ router.use(
       });
     }
 
+    const browser = await puppeteer.launch({ headless: "new" });
+    const page = await browser.newPage();
+
+    const checkForFailure = new Promise((resolve, reject) => {
+      page.on("console", (msg) => {
+        if (msg.text() == "SC01G1093AZ") {
+          resolve(false);
+        }
+      });
+      page
+        .goto(`file://${__dirname}/../../pages/player.html?dt=${id}`)
+        .then(() => {
+          setTimeout(() => {
+            resolve(true);
+          }, 500);
+        });
+    });
+
+    const canEmbed = await checkForFailure;
+
     const durationInSeconds = moment
       .duration(response.items[0].contentDetails.duration)
       .asSeconds();
@@ -71,6 +92,7 @@ router.use(
       durationInSeconds,
       title,
       thumbnail,
+      canEmbed,
     });
   }
 );
