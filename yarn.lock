@@ -2285,7 +2285,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:latest":
+"node-gyp@npm:9.3.1, node-gyp@npm:latest":
   version: 9.3.1
   resolution: "node-gyp@npm:9.3.1"
   dependencies:
@@ -2734,6 +2734,7 @@ __metadata:
     helmet: 7.0.0
     moment: 2.29.4
     morgan: 1.10.0
+    node-gyp: 9.3.1
     nodemon: 2.0.22
     prettier: 2.3.1
     ts-node: 10.9.1
