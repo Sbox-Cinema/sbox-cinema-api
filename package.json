@@ -3,13 +3,12 @@
   "version": "0.0.0",
   "description": "S&Box Cinema API",
   "scripts": {
-    "start": "node ./build/src/index.js",
+    "start": "node ./build/index.js",
     "dev": "nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/index.ts",
     "lint": "eslint --fix src",
     "build": "tsc",
     "style": "prettier --write ."
   },
-  "type": "module",
   "keywords": [],
   "author": "tech-nawar",
   "dependencies": {
