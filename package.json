@@ -40,6 +40,8 @@
   },
   "packageManager": "yarn@3.5.1",
   "engines": {
-    "node": "16.18.0"
+    "node": "16.18.0",
+    "yarn": "3.5.1",
+    "npm": "8.19.2"
   }
 }
